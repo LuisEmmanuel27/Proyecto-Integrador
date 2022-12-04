@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python|operadores</title>
+
+    <!--link a font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!--link archivo CSS-->
+    <link rel="stylesheet" href="/CSS/style.css">
+
+</head>
+
+<body>
+
+    <!--seccion del header inicio-->
+    <header class="header">
+
+        <a href="/Inicio.html" class="logo"><img src="/Imagenes/header-icon.jpg" alt=""> IziCode </a>
+
+        <nav class="navbar">
+            <div id="close-navbar" class="fas fa-times"></div>
+            <a href="/Inicio.html">Inicio</a>
+            <a href="/Cursos.html">Cursos</a>
+            <a href="/Acerca_de.html">Acerca de</a>
+        </nav>
+
+        <div class="icons">
+            <div id="account-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+    <!--seccion del header final-->
+
+    <!--seccion de cuenta form inicio-->
+
+    <section class="cuenta-form">
+
+        <div id="close-form" class="fas fa-times"></div>
+
+        <div class="buttons">
+            <span class="btn active ing-btn">Ingresar</span>
+            <span class="btn reg-btn">Registrar</span>
+        </div>
+
+        <form action="" class="ingresar-form active">
+            <h3>Inicia sesión</h3>
+            <input type="email" placeholder="Ingresar correo" class="box">
+            <input type="password" placeholder="Ingresar contraseña" class="box">
+            <div class="flex">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">Recuerdame</label>
+                <a href="#">Olvidaste tu contraseña?</a>
+            </div>
+            <input type="submit" value="Ingresar" class="btn">
+        </form>
+
+        <form action="" class="registrar-form">
+            <h3>Registrate ahora</h3>
+            <input type="text" placeholder="Nombre" class="box">
+            <input type="text" placeholder="Apellidos" class="box">
+            <input type="email" placeholder="Correo" class="box">
+            <input type="password" placeholder="Ingresa contraseña" class="box">
+            <input type="password" placeholder="Repite la contraseña" class="box">
+            <input type="submit" value="Registrar" class="btn">
+        </form>
+
+    </section>
+
+    <!--seccion de cuenta form final-->
+
+    <!--seccion titular bloque de operadores inicio-->
+
+    <h1 class="titular">bloque 3: operadores</h1>
+
+    <!--seccion titular bloque de operadores final-->
+
+    <!--seccion operadores python inicio-->
+
+    <section name="operadores-py" class="main-info">
+
+        <div name="definicion" class="info-curso">
+            <h1 class="titular-sec">¿qué son los operadores?</h1>
+            <p>
+                Los operadores son aquellos símbolos que le indican a Python que realice alguna operación específica, ya
+                sea aritmética, lógica, comparativa, etc.<br>En Python podemos encontrar los siguientes tipos de
+                operadores:
+            </p>
+            <ul>
+                <li>Operadores aritméticos</li>
+                <li>Operadores relacionales</li>
+                <li>Operadores bit a bit</li>
+                <li>Operadores de asignación</li>
+                <li>Operadores lógicos</li>
+                <li>Operadores de pertenencia</li>
+                <li>Operadores de identidad</li>
+            </ul>
+            <p>
+                Como puedes ver hay una buena variedad de estos, pero de momento solo procederemos a los mas importantes
+                o de los cuales vamos a hacer un uso constante a lo largo de este curso („• ᴗ •„).
+            </p>
+            <figure class="image">
+                <div class="icon">
+                    <img src="/Imagenes/pymu-icon-temp-2.png" alt="">
+                </div>
+            </figure>
+        </div>
+
+        <div name="op-aritmeticos" class="info-curso">
+            <h1 class="titular-sec">operadores aritméticos</h1>
+            <p>
+                Pues como su nombre lo indica son aquellos operadores que nos permiten realizar operaciones aritméticas,
+                recibiendo dos operando como entrada y devuelve un resultado. Por ejemplo: <span>suma = 5 + 7</span>,
+                siendo que <span>5</span> y <span>7</span> son los <span>operandos</span> y el <span>+</span> el
+                operador aritmético y como notaras el resultado será almacenado en la variable <span>suma</span>.<br>
+                Procedamos a ver una lista de los operandores aritméticos que podemos encontrar en Python:
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>operador</th>
+                            <th>descripción</th>
+                            <th>ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>+</td>
+                            <td>realiza la suma de operandos</td>
+                            <td>12 + 4 = 16</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>realiza la resta entre operandos</td>
+                            <td>23 - 4 = 19</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>realiza la multiplicación entre operandos</td>
+                            <td>12 * 2 = 24</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>realiza la división entre operandos</td>
+                            <td>24 / 2 = 12</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>devuelve el módulo entre operandos</td>
+                            <td>16 % 3 = 1</td>
+                        </tr>
+                        <tr>
+                            <td>**</td>
+                            <td>realiza la potencia entre operandos</td>
+                            <td>3 ** 2 = 9</td>
+                        </tr>
+                        <tr>
+                            <td>//</td>
+                            <td>realiza la división dando el resultado entero</td>
+                            <td>17 // 7 = 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tip-box">
+                <div class="icon">
+                    <img src="/Imagenes/CursoPython/pymu-tip-icon.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>algo que debes saber...</h3>
+                    <p>
+                        El sistema PEMDAS se aplica mucho en la programación por lo que debemos tener cuidado al momento
+                        de realizar nuestras operaciones, recuerda que lo que esté dentro de un () tendrá más prioridad
+                        al momento de realizarse las operaciones, por ejemplo no es lo mismo poner
+                        <span>3+3+12*3/2</span> a poner <span>3+3+(13*3)/2</span>, así que recuerda,
+                        paréntesis > exponente > multiplicación y división > suma y resta.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div name="op-relacionales" class="info-curso">
+            <h1 class="titular-sec">operadores relacionales</h1>
+            <p>
+                Los operadores relacionales los usamos cuando queremos comparar y/o establecer relaciones entre datos,
+                internamente Python devuelve un <span>True</span> o un <span>False</span> dependiendo de el resultado de
+                la comparativa.<br>Procedamos a ver una lista de los operadores relacionales que podemos encontrar en
+                Python:
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>operador</th>
+                            <th>descripción</th>
+                            <th>ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>></td>
+                            <td>Retorna <span>True</span> si el valor de la derecha es menor</td>
+                            <td>12 > 10 = <span>True</span></td>
+                        </tr>
+                        <tr>
+                            <!--tuve que usar code pq html me reconoce el < como otra cosa-->
+                            <td><code><</code></td>
+                            <td>Retorna <span>True</span> si el valor de la izquierda es menor</td>
+                            <td><code>5 < 10 = </code><span>True</span></td>
+                        </tr>
+                        <tr>
+                            <td>==</td>
+                            <td>Retorna <span>True</span> si ambos valores son iguales</td>
+                            <td>7 == 5 = <span>False</span></td>
+                        </tr>
+                        <tr>
+                            <td>>=</td>
+                            <td>Retorna <span>True</span> si el valor de la derecha es menor o igual</td>
+                            <td>10 >= 10 = <span>True</span></td>
+                        </tr>
+                        <tr>
+                            <td><code><=</code></td>
+                            <td>Retorna <span>True</span> si el valor de la izquierda es menor o igual</td>
+                            <td><code>12 <= 10 = </code><span>False</span></td>
+                        </tr>
+                        <tr>
+                            <td>!=</td>
+                            <td>Retorna <span>True</span> si ambos valores son distintos</td>
+                            <td>23 != 12 = <span>True</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>
+                Cabe recalcar que dichos operadores se pueden utilizar de igual manera con los <span>strings</span>,
+                pero el comportamiento de estos es un poco distinto, pero no te preocupes profundizaremos en eso cuando
+                lleguemos al bloque de <span>strings</span> (⌒‿⌒).
+            </p>
+        </div>
+
+        <div name="op-asignacion" class="info-curso">
+            <h1 class="titular-sec">operadores de asignación</h1>
+            <p>
+                Como su nombre lo indica son operadores que utilizamos para dar valores a las variables o modificar los
+                valores que éstas almacenen, recordemos cómo asignamos valores a las variables: a <span>=</span> 3, aquí
+                el signo <span>=</span> está fungiendo como el operador de asignación. Pero también tenemos cosas
+                cómo:<br> a <span>+=</span> 10, esto es equivalente a que digamos <span>a = a + 10</span>.
+            </p>
+            <div class="tip-box">
+                <div class="icon">
+                    <img src="/Imagenes/CursoPython/pymu-tip-icon.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>por si no lo sabes...</h3>
+                    <p>
+                        Lo que realizamos en el ejemplo de <span>a = a + 10</span> fue una reasignación de variable
+                        donde el valor que posee originalmente <span>a</span> ahora pasará a ser ese mismo sumado con
+                        10. Por ejemplo tenemos la siguiente variable <span>x = 3</span>, si queremos que <span>x</span>
+                        se multiplique por 3 y este resultado se almacene en la misma <span>x</span> solo debemos
+                        decir<br><span>x = x * 3</span> y ahora <span>x = 9</span>.
+                    </p>
+                </div>
+            </div>
+            <p>
+                Procedamos a ver una lista de los operadores de asignación que podemos encontrar en Python:
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>operador</th>
+                            <th>descripción y/o equivalencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>=</td>
+                            <td>x = 7, el valor de 7 se asigna a <span>x</span></td>
+                        </tr>
+                        <tr>
+                            <td>+=</td>
+                            <td>x += 7 es equivalente a <span>x = x + 7</span></td>
+                        </tr>
+                        <tr>
+                            <td>-=</td>
+                            <td>x -= 7 es equivalente a <span>x = x - 7</span></td>
+                        </tr>
+                        <tr>
+                            <td>*=</td>
+                            <td>x *= 7 es equivalente a <span>x = x * 7</span></td>
+                        </tr>
+                        <tr>
+                            <td>/=</td>
+                            <td>x /= 7 es equivalente a <span>x = x / 7</span></td>
+                        </tr>
+                        <tr>
+                            <td>%=</td>
+                            <td>x %= 7 es equivalente a <span>x = x % 7</span></td>
+                        </tr>
+                        <tr>
+                            <td>**=</td>
+                            <td>x **= 7 es equivalente a <span>x = x ** 7</span></td>
+                        </tr>
+                        <tr>
+                            <td>//=</td>
+                            <td>x //= 7 es equivalente a <span>x = x // 7</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div name="op-logicos" class="info-curso">
+            <h1 class="titular-sec">operadores lógicos</h1>
+            <p>
+                Los operadores lógicos nos sirven en ciertos casos similares a lo que realizamos con los comparativos,
+                pero no te preocupes si te parece confuso los veremos más en acción a medida que vayamos avanzando en el
+                curso (¬‿¬ ). En Python se representan de la siguiente manera:
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>operador</th>
+                            <th>descripción</th>
+                            <th>ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>and</td>
+                            <td>Devuelve <span>True</span> si ambos operandos son <span>True</span></td>
+                            <td>a and b</td>
+                        </tr>
+                        <tr>
+                            <td>or</td>
+                            <td>Devuelve <span>True</span> si uno de los operandos es <span>True</span></td>
+                            <td>a or b</td>
+                        </tr>
+                        <tr>
+                            <td>not</td>
+                            <td>Devuelve <span>True</span> si uno de los operandos es <span>False</span></td>
+                            <td>not a</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    <!--seccion operadores python final-->
+
+    <!--seccion boton de retorno inicio-->
+
+    <section class="btn-retorno">
+        <a href="/PythonMain.html" class="btn">página principal del curso</a>
+    </section>
+
+    <!--seccion boton de retorno final-->
+
+    <!--seccion del footer inicio-->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3 class="logo icon"><img src="/Imagenes/header-icon.jpg" alt=""> IziCode </h3>
+                <p>Aprendamos juntos a programar de forma fácil e intuitiva! (＾▽＾)</p>
+            </div>
+
+            <div class="box">
+                <h3>Enlaces rápidos</h3>
+                <a href="/Inicio.html" class="link">Inicio</a>
+                <a href="/Cursos.html" class="link">Cursos</a>
+                <a href="/Acerca_de.html" class="link">Acerca de</a>
+            </div>
+
+        </div>
+
+        <div class="credit">
+            Creado por <span>Luis Emmanuel R.F.</span> | Todos los derechos reservados
+        </div>
+
+    </section>
+
+    <!--seccion del footer final-->
+
+    <!--link archivo JS swiper-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--link archivo JS-->
+    <script src="/JS/script.js"></script>
+</body>
+
+</html>

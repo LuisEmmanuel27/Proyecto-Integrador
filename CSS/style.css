@@ -1,0 +1,1514 @@
+@charset "UTF-8";
+/*Importamos la fuente a utilizar*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500;600&display=swap");
+/*Estilos generales*/
+* {
+  font-family: "Roboto Mono", monospace;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/*Definiendo colores, sombra y borde*/
+/*Función para los grid de la pagina*/
+/*Función para los titulos de la pagina*/
+/*Función para los textos de la pagina*/
+/*Propiedades para la barra de scroll*/
+html {
+  font-size: 85.5%;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #621a6b;
+  border-radius: 0.5rem;
+}
+
+/*Estilos generales para las clases titular*/
+.titular {
+  padding: 3rem 0;
+  text-align: center;
+  color: #621a6b;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+/*Estilos generales para las clases titular-sec*/
+.titular-sec {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: black;
+  padding-top: 1rem;
+  border-bottom: 0.1rem solid #621a6b;
+  text-align: center;
+  margin: 0 5rem;
+  margin-bottom: 1rem;
+}
+
+/*Propiedades generales para los elementos btn*/
+.btn {
+  background: #c239d4;
+  padding: 1.2rem 1rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  border: 0.1rem solid #621a6b;
+  color: black;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #621a6b;
+  color: white;
+}
+
+/*Propiedades generales para los btn de retorno*/
+.btn-retorno {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 2rem;
+}
+
+/*-------------------------------------INICIO-HTML-------------------------------------*/
+/*Estilos del header*/
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 7rem;
+  padding: 2rem 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1000;
+}
+
+.header .logo {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: black;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .logo img {
+  width: 4.6rem;
+  border-radius: 50%;
+}
+
+.header .navbar {
+  position: relative;
+}
+
+.header .navbar #close-navbar {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 3rem;
+  cursor: pointer;
+  color: black;
+  display: none;
+}
+
+.header .navbar #close-navbar:hover {
+  color: #621a6b;
+  -webkit-transform: rotate(90deg) scale(1.1);
+          transform: rotate(90deg) scale(1.1);
+}
+
+.header .navbar a {
+  margin-right: 2rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: black;
+}
+
+.header .navbar a:hover {
+  color: #621a6b;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.header .icons div {
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: black;
+  margin-left: 1.2rem;
+}
+
+.header .icons div:hover {
+  color: #621a6b;
+}
+
+.header #menu-btn {
+  display: none;
+}
+
+.cuenta-form {
+  border: 0.1rem solid #621a6b;
+  position: fixed;
+  top: 0;
+  right: -105%;
+  width: 35rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: #e2b3ee;
+  z-index: 1200;
+}
+
+.cuenta-form.active {
+  right: 0;
+  -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+}
+
+.cuenta-form #close-form {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 3rem;
+  cursor: pointer;
+  color: black;
+}
+
+.cuenta-form #close-form:hover {
+  color: #621a6b;
+  -webkit-transform: rotate(90deg) scale(1.1);
+          transform: rotate(90deg) scale(1.1);
+}
+
+.cuenta-form form {
+  border: 0.1rem solid #621a6b;
+  padding: 2rem;
+}
+
+.cuenta-form form h3 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: black;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+}
+
+.cuenta-form form .box {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 1rem 1.2rem;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid #621a6b;
+}
+
+.cuenta-form form .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+  margin: 0.7rem 0;
+  gap: 0.5rem;
+}
+
+.cuenta-form form .flex label {
+  color: black;
+  cursor: pointer;
+}
+
+.cuenta-form form .flex a {
+  margin-left: auto;
+  color: #621a6b;
+  font-weight: bold;
+}
+
+.cuenta-form form .flex a:hover {
+  text-decoration: underline;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.cuenta-form form .btn {
+  width: 100%;
+}
+
+.cuenta-form .buttons .btn {
+  margin: 0 0.5rem;
+}
+
+.cuenta-form .buttons .btn.active {
+  background: #621a6b;
+  color: white;
+}
+
+.cuenta-form form {
+  border: 0.1rem solid #621a6b;
+  padding: 2rem;
+  display: none;
+}
+
+.cuenta-form form.active {
+  display: block;
+}
+
+.banner {
+  padding: 0;
+}
+
+.banner .banner-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 45rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/Imagenes/Mascot-Banner-1.jpg) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/Imagenes/Mascot-Banner-1.jpg) no-repeat;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.banner .banner-box .content {
+  border-radius: 0 1rem 0 0;
+  background: rgba(0, 0, 0, 0.2);
+  width: 60rem;
+}
+
+.banner .banner-box .content h3 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: black;
+  color: white;
+  padding-bottom: 1rem;
+}
+
+.banner .banner-box .content p {
+  font-size: 2rem;
+  line-height: 2;
+  color: black;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+.cursos-inicio .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.cursos-inicio .box-container .box {
+  padding: 1rem;
+}
+
+.cursos-inicio .box-container .box:hover .image img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.cursos-inicio .box-container .box .image {
+  height: 32rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.cursos-inicio .box-container .box .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cursos-inicio .box-container .box .image h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: black;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: rgba(189, 110, 241, 0.7);
+  border-radius: 0.5rem;
+}
+
+.cursos-inicio .box-container .box .content {
+  padding: 2rem;
+  text-align: center;
+  border: 0.1rem solid #621a6b;
+  background: rgba(191, 119, 240, 0.5);
+}
+
+.cursos-inicio .box-container .box .content h3 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: black;
+  text-transform: uppercase;
+}
+
+.cursos-inicio .box-container .box .content p {
+  font-size: 1rem;
+  line-height: 2;
+  color: black;
+  padding: 1rem 0;
+}
+
+.cursos-inicio .box-container .box .content p span {
+  color: #621a6b;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.cursos-inicio .box-container .box .content .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 0.1rem solid #621a6b;
+}
+
+.cursos-inicio .box-container .box .content .icons span {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+}
+
+.cursos-inicio .box-container .box .content .icons span i {
+  color: #621a6b;
+}
+
+/*-------------------------------------CURSOS-HTML-------------------------------------*/
+.cursos .titular {
+  padding-bottom: 0.5rem;
+}
+
+.cursos .slide {
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  width: 32rem;
+}
+
+.cursos .slide:hover .image img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.cursos .slide .image {
+  height: 32rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.cursos .slide .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cursos .slide .image h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: black;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: rgba(189, 110, 241, 0.7);
+  border-radius: 0.5rem;
+}
+
+.cursos .slide .content {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  border: 0.1rem solid #621a6b;
+  background: rgba(191, 119, 240, 0.5);
+}
+
+.cursos .slide .content p {
+  font-size: 1rem;
+  line-height: 2;
+  color: black;
+  padding: 1rem 0;
+}
+
+.cursos .slide .content p span {
+  color: #621a6b;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.cursos .slide .content .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 0.1rem solid #621a6b;
+}
+
+.cursos .slide .content .icons span {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+}
+
+.cursos .slide .content .icons span i {
+  color: #621a6b;
+}
+
+.proximamente-cur {
+  margin: 3rem;
+  padding: 2rem;
+  border: 0.1rem solid #621a6b;
+  background: #e181ee;
+}
+
+/*-------------------------------------ACERCA-DE-HTML-------------------------------------*/
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  background: rgba(243, 198, 243, 0.521);
+  padding: 1rem;
+}
+
+.about .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.about .image img {
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.about .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.about .content h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: black;
+  line-height: 3rem;
+  text-align: center;
+  border-bottom: 0.1rem solid #621a6b;
+  margin: 1rem 0;
+}
+
+.about .content p {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+  margin-bottom: 1.3rem;
+}
+
+.about .content .icons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.about .content .icons-container .icons {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 16rem;
+          flex: 1 1 16rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+
+.about .content .icons-container .icons:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background: #e2b3ee;
+  border-radius: 5rem;
+}
+
+.about .content .icons-container .icons img {
+  width: 7rem;
+  margin-bottom: 0.5rem;
+}
+
+.about .content .icons-container .icons h3 {
+  text-transform: capitalize;
+  color: #621a6b;
+  font-weight: bold;
+}
+
+/*-----------------------------------INFORMACION MASCOTAS-----------------------------------*/
+.mascotas .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.mascotas .box-container .box:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.mascotas .box-container .box:hover .content {
+  background: rgba(243, 198, 243, 0.521);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.mascotas .box-container .box:hover .content h1 {
+  border-bottom: 0.1rem solid #621a6b;
+  margin: 0 2.5rem;
+}
+
+.mascotas .box-container .box figure {
+  height: 40rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.mascotas .box-container .box figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.mascotas .box-container .box .content h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.mascotas .box-container .box .content h1 span {
+  color: #621a6b;
+  font-weight: bold;
+}
+
+.mascotas .box-container .box .content p {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+  padding: 1rem;
+}
+
+/*---------------------------------------------PROFESORES---------------------------------------------*/
+.profesores {
+  padding-bottom: 2rem;
+}
+
+.profesores .slide {
+  text-align: center;
+  width: 30rem;
+}
+
+.profesores .slide:hover .imagen img {
+  background: #e181ee;
+}
+
+.profesores .slide:hover .imagen .content {
+  bottom: 0;
+}
+
+.profesores .slide .imagen {
+  position: relative;
+  overflow: hidden;
+}
+
+.profesores .slide .imagen img {
+  width: 100%;
+  background: rgba(243, 198, 243, 0.521);
+}
+
+.profesores .slide .imagen .content {
+  background: #e2b3ee;
+  position: absolute;
+  bottom: -10rem;
+  left: 0;
+  right: 0;
+  padding: 2.5rem;
+}
+
+.profesores .slide .imagen .content h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.profesores .slide .imagen .content span {
+  color: #621a6b;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.profesores .slide .imagen .content p {
+  font-size: 1rem;
+  line-height: 2;
+  color: black;
+  line-height: 1.5rem;
+}
+
+.profesores .slide .sub-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.profesores .slide .sub-content h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: black;
+}
+
+.profesores .slide .sub-content a {
+  font-size: 1.2rem;
+  line-height: 2;
+  color: black;
+  text-transform: uppercase;
+  color: #621a6b;
+  font-weight: bolder;
+}
+
+.profesores .slide .sub-content a:hover {
+  text-decoration: underline;
+}
+
+/*-------------------------------------PYTHON-MAIN-CURSOS--------------------------------*/
+.pythonMain {
+  padding-bottom: 2rem;
+}
+
+.pythonMain h1 span {
+  color: #c239d4;
+}
+
+.pythonMain .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.pythonMain .box-container .box:hover .figure img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.pythonMain .box-container .box.hide {
+  display: none;
+}
+
+.pythonMain .box-container .box .figure {
+  overflow: hidden;
+  height: 20rem;
+  position: relative;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.pythonMain .box-container .box .figure img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.pythonMain .box-container .box .content {
+  background: rgba(243, 198, 243, 0.521);
+  border-radius: 0 0 1rem 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  border: 0.1rem solid #621a6b;
+}
+
+.pythonMain .box-container .box .content h3 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: black;
+  padding: 0.5rem;
+  margin: 0 2rem;
+  border-bottom: 0.1rem solid #621a6b;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.pythonMain .load-more {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.pythonMain .load-more .btn {
+  width: 25rem;
+  font-size: 1.5rem;
+}
+
+/*--------------------------------------ABOUT-PYTHON-------------------------------------------*/
+.about-python {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  background: rgba(243, 198, 243, 0.521);
+  padding: 1rem;
+}
+
+.about-python .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.about-python .image img {
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.about-python .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.about-python .content p {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+  margin-bottom: 1.3rem;
+}
+
+.about-python .content .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.about-python .content .icon img {
+  width: 20%;
+}
+
+/*---------------------------------------PYTHON-USES------------------------------------------*/
+.python-uses {
+  background: rgba(243, 198, 243, 0.521);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.python-uses .content {
+  margin: 0 3rem;
+}
+
+.python-uses .content p {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+}
+
+.python-uses .content ul {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+  padding-left: 3rem;
+  list-style-type: none;
+}
+
+.python-uses .content ul li:before {
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-size: 10px;
+  background-image: url("/Imagenes/python-icon-2.png");
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+/*---------------------------------------PYTHON-ADVANTAGES------------------------------------------*/
+.python-advan {
+  background: rgba(243, 198, 243, 0.521);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.python-advan .content {
+  margin: 0 3rem;
+}
+
+.python-advan .content ul {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+  padding-left: 3rem;
+  list-style-type: none;
+}
+
+.python-advan .content ul li:before {
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-size: 10px;
+  background-image: url("/Imagenes/python-icon-2.png");
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.python-advan .content p {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+  padding: 1rem 0;
+}
+
+.python-advan .content p span {
+  color: #621a6b;
+  font-weight: bolder;
+}
+
+.python-advan .content .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.python-advan .content .image .icon {
+  width: 15rem;
+  height: 15rem;
+}
+
+.python-advan .content .image .icon img {
+  width: 100%;
+}
+
+/*-------------------------------------PYTHON-INSTALL-------------------------------------*/
+.python-install {
+  background: rgba(243, 198, 243, 0.521);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.python-install .content {
+  margin: 0 3rem;
+}
+
+.python-install .content p {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+  padding-bottom: 0.5rem;
+}
+
+.python-install .content p span {
+  color: #621a6b;
+  font-weight: bolder;
+}
+
+.python-install .content p a {
+  color: #621a6b;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.python-install .content h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.python-install .content h3:hover {
+  text-decoration: underline;
+}
+
+.python-install .content .icons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
+
+.python-install .content .icons-container .icon {
+  margin: 0 2rem;
+  width: 15rem;
+  height: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.python-install .content .icons-container .icon img {
+  width: 100%;
+}
+
+.python-install .content .icons-container .icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.python-install .content figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.python-install .content figure a {
+  width: 15rem;
+  height: 15rem;
+  margin-bottom: 1rem;
+}
+
+.python-install .content figure a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.python-install .content figure a img {
+  width: 100%;
+}
+
+/*-------------------------------------ESTILOS PARA LOS BLOQUES DE PYTHON-----------------------------------*/
+.main-info {
+  background: rgba(243, 198, 243, 0.521);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.main-info .info-curso {
+  margin: 0 3rem;
+}
+
+.main-info .info-curso h4 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: black;
+  color: #621a6b;
+  font-weight: bolder;
+  margin-top: 0.5rem;
+}
+
+.main-info .info-curso p {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+  padding-bottom: 0.5rem;
+}
+
+.main-info .info-curso p span {
+  color: #621a6b;
+  font-weight: bolder;
+}
+
+.main-info .info-curso .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem 0;
+}
+
+.main-info .info-curso .image .icon {
+  width: 15rem;
+  height: 15rem;
+}
+
+.main-info .info-curso .image .icon img {
+  width: 100%;
+}
+
+.main-info .info-curso .image img {
+  margin: 0 1rem;
+  padding: 0.5rem 0;
+}
+
+.main-info .info-curso .tip-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.main-info .info-curso .tip-box:hover .icon {
+  background: #e181ee;
+}
+
+.main-info .info-curso .tip-box:hover .icon img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.main-info .info-curso .tip-box:hover .content {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.main-info .info-curso .tip-box .icon {
+  height: 20rem;
+  width: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #e2b3ee;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.main-info .info-curso .tip-box .icon img {
+  width: 90%;
+}
+
+.main-info .info-curso .tip-box .content {
+  border: 0.1rem solid #621a6b;
+  background: #e2b3ee;
+  width: 40rem;
+  height: auto;
+  margin: 0 1rem;
+  border-radius: 1rem;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+          clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.main-info .info-curso .tip-box .content h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+}
+
+.main-info .info-curso .tip-box .content p {
+  font-size: 1rem;
+  line-height: 2;
+  color: black;
+  margin: 0.2rem;
+}
+
+.main-info .info-curso ul {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: black;
+  padding-left: 3rem;
+  list-style-type: none;
+  margin: 0.5rem 0;
+}
+
+.main-info .info-curso ul li:before {
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-size: 10px;
+  background-image: url("/Imagenes/python-icon-2.png");
+  background-repeat: no-repeat;
+  margin-right: 5px;
+}
+
+.main-info .info-curso .table-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.main-info .info-curso .table-container table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.main-info .info-curso .table-container table th {
+  background: #e2b3ee;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border: solid 1px #e2b3ee;
+}
+
+.main-info .info-curso .table-container table td {
+  text-align: center;
+  padding: 0.5rem;
+  border: solid 1px #e2b3ee;
+  border-top: none;
+}
+
+.main-info .info-curso .table-container table td span {
+  color: #621a6b;
+  font-weight: bolder;
+}
+
+.main-info .info-curso .formula {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main-info .info-curso .formula .lado-iz {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.main-info .info-curso .formula .parentesis {
+  font-size: 2rem;
+  padding: 0 0.3rem;
+}
+
+.main-info .info-curso .formula .cuerpo .superior {
+  font-size: 1.1rem;
+  border-bottom: 0.1rem solid #621a6b;
+}
+
+.main-info .info-curso .formula .cuerpo .inferior {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.main-info .info-curso .formula .exponente {
+  position: relative;
+  top: -10px;
+  left: -2px;
+  font-size: 1.1rem;
+}
+
+/*-------------------------------------CONSTRUCCION-------------------------------------*/
+.construc {
+  background: url(/Imagenes/back-construc-temp.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.construc h1 {
+  padding: 25rem 0;
+  color: black;
+  background: rgba(189, 110, 241, 0.4);
+}
+
+/*-------------------------------------FOOTER-------------------------------------------*/
+.footer {
+  background: #e2b3ee;
+}
+
+.footer .box-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 5%;
+}
+
+.footer .box-container .box .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .box-container .box h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: black;
+  padding: 1rem 0;
+}
+
+.footer .box-container .box img {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.footer .box-container .box p {
+  font-size: 1.2rem;
+  line-height: 2;
+  color: black;
+  padding: 0.5rem 0;
+}
+
+.footer .box-container .box a {
+  font-size: 1.2rem;
+  line-height: 2;
+  color: black;
+  padding: 0.5rem 0;
+  display: block;
+  color: #621a6b;
+  font-weight: bold;
+}
+
+.footer .box-container .box a:hover {
+  text-decoration: underline;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.footer .credit {
+  padding: 2rem 0;
+  margin: 0 3rem;
+  text-align: center;
+  border-top: 0.1rem solid #621a6b;
+  font-size: 1.2rem;
+}
+
+.footer .credit span {
+  color: #621a6b;
+  font-weight: bolder;
+}
+
+/*-------------------------------------MEDIA QUERIES------------------------------------*/
+@media (max-width: 1200px) {
+  .header {
+    padding: 2rem 7%;
+  }
+  section {
+    padding: 3rem 5%;
+  }
+  .footer .box {
+    padding: 1rem;
+  }
+  .banner .banner-box .content {
+    border-radius: 1rem;
+    width: 50rem;
+  }
+  .banner .banner-box .content h3 {
+    font-size: 2.7rem;
+  }
+  .banner .banner-box .content p {
+    font-size: 1.5rem;
+  }
+  .construc h1 {
+    border-radius: 3rem;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 75%;
+  }
+  .header {
+    padding: 2rem;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
+  .footer .box-container {
+    font-size: 50%;
+  }
+  .footer .box-container .box {
+    padding: 1.5rem;
+  }
+  .banner .banner-box .content h3 {
+    font-size: 2.5rem;
+  }
+  .mascotas .box .content {
+    background: rgba(243, 198, 243, 0.521);
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header #menu-btn {
+    display: inline-block;
+  }
+  .header .navbar {
+    position: fixed;
+    top: 0;
+    right: -105%;
+    width: 30rem;
+    background: #e2b3ee;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    z-index: 1200;
+  }
+  .header .navbar #close-navbar {
+    display: block;
+  }
+  .header .navbar.active {
+    right: 0;
+    -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+  }
+  .header .navbar a {
+    display: block;
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  .banner .banner-box .content {
+    width: 35rem;
+  }
+  .table-container table {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 70%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python|VariablesYDatos</title>
+
+    <!--link a font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!--link archivo CSS-->
+    <link rel="stylesheet" href="/CSS/style.css">
+
+</head>
+
+<body>
+
+    <!--seccion del header inicio-->
+    <header class="header">
+
+        <a href="/Inicio.html" class="logo"><img src="/Imagenes/header-icon.jpg" alt=""> IziCode </a>
+
+        <nav class="navbar">
+            <div id="close-navbar" class="fas fa-times"></div>
+            <a href="/Inicio.html">Inicio</a>
+            <a href="/Cursos.html">Cursos</a>
+            <a href="/Acerca_de.html">Acerca de</a>
+        </nav>
+
+        <div class="icons">
+            <div id="account-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+    <!--seccion del header final-->
+
+    <!--seccion de cuenta form inicio-->
+
+    <section class="cuenta-form">
+
+        <div id="close-form" class="fas fa-times"></div>
+
+        <div class="buttons">
+            <span class="btn active ing-btn">Ingresar</span>
+            <span class="btn reg-btn">Registrar</span>
+        </div>
+
+        <form action="" class="ingresar-form active">
+            <h3>Inicia sesión</h3>
+            <input type="email" placeholder="Ingresar correo" class="box">
+            <input type="password" placeholder="Ingresar contraseña" class="box">
+            <div class="flex">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">Recuerdame</label>
+                <a href="#">Olvidaste tu contraseña?</a>
+            </div>
+            <input type="submit" value="Ingresar" class="btn">
+        </form>
+
+        <form action="" class="registrar-form">
+            <h3>Registrate ahora</h3>
+            <input type="text" placeholder="Nombre" class="box">
+            <input type="text" placeholder="Apellidos" class="box">
+            <input type="email" placeholder="Correo" class="box">
+            <input type="password" placeholder="Ingresa contraseña" class="box">
+            <input type="password" placeholder="Repite la contraseña" class="box">
+            <input type="submit" value="Registrar" class="btn">
+        </form>
+
+    </section>
+
+    <!--seccion de cuenta form final-->
+
+    <!--seccion del titular del bloque incio-->
+
+    <h1 class="titular">bloque 2: variables y tipos de datos</h1>
+
+    <!--seccion del titular del bloque final-->
+
+    <!--seccion defininedo variables inicio-->
+
+    <section name="variables-datos" class="main-info">
+
+        <div name="difinicion" class="info-curso">
+            <h1 class="titular-sec">definición de variables</h1>
+            <p>
+                Puede que ya tengas conocimientos previos acerca de de las variables sobre qué son y el cómo funcionan,
+                pero en caso de que no, igualmente vamos a definirla (╹ڡ╹). Una variable es
+                un nombre que se refiere a un objeto que reside en la memoria. El objeto puede ser de alguno de
+                los tipos de datos que existen en Python los cuales veremos más adelante. Imagina que las
+                variables son cajas que almacenan información.
+            </p>
+            <figure class="image">
+                <div class="icon">
+                    <img src="/Imagenes/caja-icon.png" alt="">
+                </div>
+            </figure>
+            <p>
+                Cada caja tiene su nombre o identificador <span>único</span> aunque claro, el contenido de
+                dichas cajas puede ser modificado según las tareas que estemos realizando.<br>
+                En las variables encontramos lo que denominamos el <span>alcance de las variables</span>,
+                osea si dicha variable se usará en cualquier sitio del código se les conoce como <span>globales</span>
+                o solo en bloques específicos del mismo las cuales se conocen como <span>locales</span>.<br>
+                Pero bueno, no pasa nada si aún no te queda del todo claro sobre a qué nos referimos con
+                variables locales y globales, más adelante profundizaremos en dicho tema.
+            </p>
+            <figure class="image">
+                <div class="icon">
+                    <img src="/Imagenes/pymu-icon-temp-2.png" alt="">
+                </div>
+            </figure>
+        </div>
+
+        <div name="ejemplos" class="info-curso">
+            <h1 class="titular-sec">ejemplos de variables</h1>
+            <p>
+                A continuación se presentan ejemplo sobre asignar variables, con su respectivo identificador
+                y valores que podemos asignarles:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/Variables-ejemplo-1.png" alt="">
+            </div>
+            <p>
+                Si tienes experiencia con otros lenguajes, notaras que en Python <span>no</span> es necesario
+                especificar el tipo de variable que estamos almacenando, así como las lineas de codigo no terminan con
+                un <span>";"</span> como sucede en otros lenguajes.<br>Recuerda que cuando queremos definir una
+                variable debemos de tratar de ser lo más descriptivos posibles al momento de nombrarla, ya que, cuando
+                alguien más tenga que revisar nuestro código pueda hacerlo de una mejor manera.Habiendo explicado esto
+                podemos pasar a ver que tipos de variables podemos almacenar en nuestras variables ( ﾉ ﾟｰﾟ)ﾉ.
+            </p>
+        </div>
+
+        <div name="tipos-dato" class="info-curso">
+
+            <h1 class="titular-sec">tipos de datos</h1>
+            <p>
+                En Python podemos encontrar distintos tipos de datos que tienen distintas características y
+                clasificaciones, los más básicos serían los de tipo numérico, entero y booleano. Que si bien, como
+                mencionamos antes, en Python no es necesario asignar qué tipo de valor tendrán nuestras variables, si
+                debemos saber de qué tipo se tratan ya que entre estas hay diferencias significativas como veremos a
+                continuación (¬‿¬).
+            </p>
+
+            <h4>1. int</h4>
+            <p>
+                Las variables de tipo entero por lo general siempre se les conoce como <span>int</span>, estos son
+                basicamente números fijos o precisos, para que me entiendas los que no tienen decimal (￣▽￣)".<br>
+            </p>
+            <div class="tip-box">
+                <div class="icon">
+                    <img src="/Imagenes/CursoPython/pymu-tip-icon.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>hey sabias que...</h3>
+                    <p>
+                        Las variables int tienen un rango ¿sabes? estas van desde el -2.147.483.648 a 2.147.483.647,
+                        bastante grande ha decir verdad pero este rango es mayor en sistemas de 64 bits donde este
+                        es de -9.223.372.036.854.775.808 hasta 9.223.372.036.854.775.807 (⊙ˍ⊙).
+                    </p>
+                </div>
+            </div>
+
+            <h4>2. long</h4>
+            <p>
+                Similar <span>int</span> contamos con el tipo de dato <span>long</span> que en esencia es un int
+                pero con mucho mayor rango, siendo que este está limitado sólo por la memoria de nuestra máquina
+                (⊙o⊙), aunque en este caso, sí que debemos indicar que estamos usando un long colocando una
+                <span>L</span> de la siguiente manera: <span>numeroLong = 33L;</span>
+            </p>
+
+            <h4>3. float</h4>
+            <p>
+                Lo que nos permite <span>float</span> es el poder usar números decimales, algo que debes saber al
+                respecto es que no tiene precisión infinita, aquí un ejemplo por si no sabes a qué me refiero con eso:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/Float-ejemplo-1.png" alt="">
+            </div>
+            <p>
+                Como pudiste notar Python directamente lo almaceno con un 1, ya que como se mencionó antes, no es
+                es posible representar tanta precisión decimal.
+            </p>
+            <div class="tip-box">
+                <div class="icon">
+                    <img src="/Imagenes/CursoPython/pymu-tip-icon.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>hey sabias que...</h3>
+                    <p>
+                        En el caso de las variables float, que en otros lenguajes es conocida como double, el rango de
+                        esta es bastante mayor al de un int siendo que la precisión mínima de este es
+                        2.2250738585072014e-308 y la máxima 1.7976931348623157e+308 ⊙.☉.
+                    </p>
+                </div>
+            </div>
+
+            <h4>4. booleano</h4>
+            <p>
+                Los <span>booleanos</span> o simplemente <span>bool</span> son un tipo de dato que nos permite almacenar
+                dos valores en particular, <span>True</span> y <span>False</span>. Se declaran de la siguiente manera:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/bool-ejemplo-1.png" alt="">
+            </div>
+            <p>
+                Esta variable es bastante usada y es más importante de lo que parece, pero a medida que vayamos
+                avanzando en este curso te darás cuenta del porqué (. ❛ ᴗ ❛.).
+            </p>
+
+            <h4>5. números complejos</h4>
+            <p>
+                De manera resumida los números complejos son aquellos que están divididos en dos partes, la parte
+                <span>real</span> y la parte <span>imaginaria</span>, por ejemplo la parte real sería
+                <span>7 o 2.3</span> y la parte imaginaria sería <span>5j o -3j</span>, miremos este ejemplo para tener
+                una idea más clara:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/complex-ejemplo-1.png" alt="">
+            </div>
+            <p>
+                Incluso podemos tener una parte real de valor 0, siendo que nos queda algo así <span>x = 2.3j</span>.
+                Pero he de decir que si no eres una persona muy metida en las <span>telecomunicaciones</span> o la
+                <span>electrónica</span> rara vez harás uso de estos por lo que no te espantes si no tienes claro este
+                concepto. En caso contrario estarás feliz con saber que Python es una buena herramienta para lo anterior
+                mencionado.
+            </p>
+
+            <h4>6. strings</h4>
+            <p>
+                Los <span>strings</span> o <span>cadenas de caracteres</span>, que como su nombre ya lo indica son
+                variables que nos permiten almacenar <span>caracteres</span>, esto lo marcamos haciendo uso de las
+                comillas, ya sean las dobles <span>""</span> o las simples <span>''</span> como podemos ver en el
+                siguiente ejemplo:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-ejemplo-1.png" alt="">
+            </div>
+            <p>
+                Debido a que son un tipo de dato con muchos usos y propiedades en Python más adelante veremos un bloque
+                especial enfocado en los strings ♪(^∇^*).
+            </p>
+
+        </div>
+
+    </section>
+
+    <!--seccion defininedo variables final-->
+
+    <!--seccion boton de retorno inicio-->
+
+    <section class="btn-retorno">
+        <a href="/PythonMain.html" class="btn">página principal del curso</a>
+    </section>
+
+    <!--seccion boton de retorno final-->
+
+    <!--seccion del footer inicio-->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3 class="logo icon"><img src="/Imagenes/header-icon.jpg" alt=""> IziCode </h3>
+                <p>Aprendamos juntos a programar de forma fácil e intuitiva! (＾▽＾)</p>
+            </div>
+
+            <div class="box">
+                <h3>Enlaces rápidos</h3>
+                <a href="/Inicio.html" class="link">Inicio</a>
+                <a href="/Cursos.html" class="link">Cursos</a>
+                <a href="/Acerca_de.html" class="link">Acerca de</a>
+            </div>
+
+        </div>
+
+        <div class="credit">
+            Creado por <span>Luis Emmanuel R.F.</span> | Todos los derechos reservados
+        </div>
+
+    </section>
+
+    <!--seccion del footer final-->
+
+    <!--link archivo JS swiper-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--link archivo JS-->
+    <script src="/JS/script.js"></script>
+</body>
+
+</html>

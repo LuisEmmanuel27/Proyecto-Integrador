@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python|strings</title>
+
+    <!--link a font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!--link archivo CSS-->
+    <link rel="stylesheet" href="/CSS/style.css">
+
+</head>
+
+<body>
+
+    <!--seccion del header inicio-->
+    <header class="header">
+
+        <a href="/Inicio.html" class="logo"><img src="/Imagenes/header-icon.jpg" alt=""> IziCode </a>
+
+        <nav class="navbar">
+            <div id="close-navbar" class="fas fa-times"></div>
+            <a href="/Inicio.html">Inicio</a>
+            <a href="/Cursos.html">Cursos</a>
+            <a href="/Acerca_de.html">Acerca de</a>
+        </nav>
+
+        <div class="icons">
+            <div id="account-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+    <!--seccion del header final-->
+
+    <!--seccion de cuenta form inicio-->
+
+    <section class="cuenta-form">
+
+        <div id="close-form" class="fas fa-times"></div>
+
+        <div class="buttons">
+            <span class="btn active ing-btn">Ingresar</span>
+            <span class="btn reg-btn">Registrar</span>
+        </div>
+
+        <form action="" class="ingresar-form active">
+            <h3>Inicia sesión</h3>
+            <input type="email" placeholder="Ingresar correo" class="box">
+            <input type="password" placeholder="Ingresar contraseña" class="box">
+            <div class="flex">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">Recuerdame</label>
+                <a href="#">Olvidaste tu contraseña?</a>
+            </div>
+            <input type="submit" value="Ingresar" class="btn">
+        </form>
+
+        <form action="" class="registrar-form">
+            <h3>Registrate ahora</h3>
+            <input type="text" placeholder="Nombre" class="box">
+            <input type="text" placeholder="Apellidos" class="box">
+            <input type="email" placeholder="Correo" class="box">
+            <input type="password" placeholder="Ingresa contraseña" class="box">
+            <input type="password" placeholder="Repite la contraseña" class="box">
+            <input type="submit" value="Registrar" class="btn">
+        </form>
+
+    </section>
+
+    <!--seccion de cuenta form final-->
+
+    <!--seccion titular bloque de operadores inicio-->
+
+    <h1 class="titular">bloque 4: strings</h1>
+
+    <!--seccion titular bloque de operadores final-->
+
+    <!--seccion arrays python inicio-->
+
+    <section name="arrays-py" class="main-info">
+
+        <div name="definicion" class="info-curso">
+            <h1 class="titular-sec">¿qué son los strings?</h1>
+            <p>
+                Como habíamos mencionado en el bloque de tipos de datos, los <span>strings</span> o <span>cadenas de
+                    caracteres</span>, que como su nombre ya lo indica son variables que nos permiten almacenar
+                <span>caracteres</span>, esto lo marcamos haciendo uso de las comillas, ya sean las dobles
+                <span>""</span> o las simples <span>''</span>, solo que debido a que los strings conllevan varias cosas
+                extras esperamos hasta este bloque para veamos de qué se tratan (. ❛ ᴗ ❛.).
+            </p>
+            <p>
+                Cabe mencionar que los strings son un tipo de variable <span>inmutable</span>, a demás de
+                que los strings no están realmente limitados en tamaño como es el caso de <span>int</span>, en este caso
+                está únicamente limitado por la memoria de tu ordenador (⊙ˍ⊙).
+            </p>
+            <div class="tip-box">
+                <div class="icon">
+                    <img src="/Imagenes/CursoPython/pymu-tip-icon.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>algo que debes saber...</h3>
+                    <p>
+                        Las variables pueden ser <span>mutables</span>, los cuales pueden ser modificados una vez se
+                        cierran, por ejemplo tenemos las listas, diccionarios, sets, etc. Mientras que los
+                        <span>inmutables</span> son aquellos que no pueden ser modificados una vez se cierran, como lo
+                        son los booleanos, int, strings, tuplas, etc. Más adelante veremos cómo esto afecta el
+                        comportamiento de Python.
+                    </p>
+                </div>
+            </div>
+            <figure class="image">
+                <div class="icon">
+                    <img src="/Imagenes/pymu-icon-temp-2.png" alt="">
+                </div>
+            </figure>
+        </div>
+
+        <div name="comillas" class="info-curso">
+            <h1 class="titular-sec">cuidado con las comillas</h1>
+            <p>
+                Como vimos en el ejemplo en tipos de variables:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-ejemplo-1.png" alt="">
+            </div>
+            <p>
+                Vemos que podemos usar comillas simples o dobles y esto a ojos de Python por decirlo de una manera los
+                tomará como iguales, pero algo con lo que debes tener cuidado es que no puedes usar comillas dobles
+                dentro de un string el cual defines con comillas dobles y los mismo con los que definas con comillas
+                simples, no podrás usar comillas simples dentro del string... seguro que te he confundido un poco
+                (￣_,￣ ), aquí un ejemplo para que entiendas de mejor manera:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-ejemplo-2.png" alt="">
+            </div>
+            <p>
+                ¿Te diste cuenta? al repetir las comillas en el string provocamos que se cierre y abra uno nuevo pero
+                Python nos lo marcará como error, ya que el texto <span>como</span> queda prácticamente al aire sin
+                saberse que es para el lenguaje. Pero algo que sí podemos hacer es colocar comillas simples dentro de
+                comillas dobles y viceversa, como podemos ver aquí:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-ejemplo-3.png" alt="">
+            </div>
+            <p>
+                Como puedes ver de esa manera no se cierra el string provocando errores (╹ڡ╹ ).
+            </p>
+        </div>
+
+        <div name="strings-mat" class="info-curso">
+            <h1 class="titular-sec">¿los strings son... matrices?</h1>
+            <p>
+                Python como en otros lenguajes de programación, los strings son cadenas de bytes que representan
+                caracteres, donde poseen una posición y dirección de memoria, en este caso solo nos centraremos en la
+                posición, como se dice en el título los strings son básicamente <span>matrices</span> donde cada
+                carácter ocupa un bloque o espacio de memoria, como podemos ver en la imagen:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-estruct.png" alt="">
+            </div>
+            <p>
+                Para que quede aún más claro lo anterior mencionado tenemos el siguiente ejemplo donde accedemos a una
+                posición dentro del string:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-ejemplo-4.png" alt="">
+            </div>
+            <p>
+                Analicemos un poco el ejemplo, vemos que tenemos un string, que como te habrás dado cuenta a lo largo de
+                los ejemplos la forma de mostrar algo por pantalla es por medio del comando <span>print()</span>, dentro
+                del print del ejemplo notamos que está el nombre de nuestra variable y unos corchetes <span>[]</span>,
+                los corchetes los usamos para indicar, en estos casos, que vamos a acceder a una posición dentro del
+                string, en este caso es la posición <span>3</span>, por si no lo sabes, siempre repito SIEMPRE en la
+                programación las posiciones se empiezan a contar desde el numero <span>0</span> y no desde el
+                <span>1</span>, por eso si te confundia ver que el print nos marcaba la letra <span>a</span> en vez de
+                la letra <span>l</span> es por eso justamente ╮(╯▽╰)╭.
+            </p>
+            <div class="tip-box">
+                <div class="icon">
+                    <img src="/Imagenes/CursoPython/pymu-tip-icon.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>no solo mires y leas...</h3>
+                    <p>
+                        Recuerda tener tu medio para programar Python abierto y siempre prueba por tu cuenta los
+                        ejemplos que vemos, incluso experimenta cambiando valores o moviendo algunas cosas,
+                        experimentar por tu cuenta es de las mejores formas en que se aprende a programar.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div name="func-strings" class="info-curso">
+            <h1 class="titular-sec">funciones o métodos de strings</h1>
+            <p>
+                Una de las cosas por las que se caracteriza Python es por que ya contamos con funciones que harán de
+                forma automática ciertas tareas que podamos llegar a necesitar (•̀ ω •́ ), por lo que como puedes intuir
+                los strings poseen ciertas funciones con las que podemos trabajar, así que veámos de cuáles se tratan.
+            </p>
+            <h4>1. len()</h4>
+            <p>
+                Para lo que nos sirve <span>len()</span> es para saber el tamaño de nuestro string (aunque también es
+                aplicable a muchas otras estructuras que veremos más a futuro) para hacer uso de este método simplemente
+                debemos hacer lo siguiente:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-len-1.png" alt="">
+            </div>
+            <p>
+                Como se puede ver en el ejemplo solo basta con colocar el nombre de nuestra variable string dentro de
+                los <span>()</span> de len, incluso podemos guardar dicho valor en una nueva variable:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-len-2.png" alt="">
+            </div>
+            <p>
+                Algo que debes saber es que los espacios también cuentan como <span>caracteres</span> por lo que
+                estos también son contados al momento de utilizar len().
+            </p>
+            <h4>2. in</h4>
+            <p>
+                Con <span>in</span> lo que podemos hacer es saber si cierto elemento está presente en el string, algo
+                así como cuando buscas la existencia de una palabra clave dentro de un documento, veamos como se
+                utiliza:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-in-1.png" alt="">
+                <img src="/Imagenes/CursoPython/string-in-2.png" alt="">
+            </div>
+            <p>
+                Vemos que Python nos devuelve un valor booleano, <span>True</span> en caso de que exista y
+                <span>False</span> en caso de que no, también debes notar que Python es muy estricto con el uso de
+                mayúsculas y minúsculas, tanto al momento de nombrar variables como al momento de buscar un elemento, ya
+                que como puedes ver <span>Pymu</span> no es igual que <span>pymu</span> (￣、￣). ¿Recuerdas al operador
+                <span>not</span>? Bueno pues aquí podemos aplicarlo de la siguiente forma para que se invierta el valor
+                booleano que nos devuelva Python:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-in-3.png" alt="">
+                <img src="/Imagenes/CursoPython/string-in-4.png" alt="">
+            </div>
+            <h4>3. más métodos</h4>
+            <p>
+                Siendo sinceros Python cuenta con una gran lista de métodos, por lo que te presentaré una tabla con
+                algunos de los métodos más usados que podemos utilizar:
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>método</th>
+                            <th>descripción</th>
+                            <th>ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>capitalize()</td>
+                            <td>Convierte el <span>primer</span> carácter en mayúscula</td>
+                            <td>x = x.capitalize()</td>
+                        </tr>
+                        <tr>
+                            <td>casefold()</td>
+                            <td>Convierte la cadena en <span>minúsculas</span></td>
+                            <td>x = x.casefold()</td>
+                        </tr>
+                        <tr>
+                            <td>count()</td>
+                            <td><span>Cuenta</span> la cantidad presente de elementos buscados</td>
+                            <td>x = x.count("elemento")</td>
+                        </tr>
+                        <tr>
+                            <td>endswith()</td>
+                            <td><span>Revisa</span> que el string termine con el elemento ingresado</td>
+                            <td>x = x.endswith("elemento")</td>
+                        </tr>
+                        <tr>
+                            <td>upper()</td>
+                            <td>Convierte la cadena en <span>mayúsculas</span></td>
+                            <td>x = x.upper()</td>
+                        </tr>
+                        <tr>
+                            <td>lower()</td>
+                            <td>Convierte la cadena en <span>minúsculas</span></td>
+                            <td>x = x.lower()</td>
+                        </tr>
+                        <tr>
+                            <td>replace()</td>
+                            <td><span>Sustituye</span> un elemento por otro</td>
+                            <td>x = x.replace("original","nuevo")</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>
+                Seguramente al ver los ejemplos de la tabla te sientas cierta confusión, lo que sucede es que dichos
+                métodos devuelven un nuevo string, por lo que puedes almacenarlo en una nueva variable para así
+                conservar el original sin el método aplicado, o bien, reescribir la variable como se presenta en los
+                ejemplos de la tabla, pero ya te tocará a ti probar cada método y experimentar un poco con ellos
+                〜(￣▽￣〜).
+            </p>
+        </div>
+
+        <div name="cmc-strings" class="info-curso">
+            <h1 class="titular-sec">cortando, concatenando y más</h1>
+            <p>
+                Vaya que sí que podemos hacer muchas cosas con los strings (ԾㅂԾ), ahora veremos como el título lo
+                indica, cómo cortar strings, modificar, aunque lo de modificar es básicamente haciendo uso de los
+                métodos vistos en la tabla y concatenar cadenas.
+            </p>
+            <h4>1. cortar un string</h4>
+            <p>
+                Cuando nos referimos a cortar un string estamos hablando de mostrar los caracteres de este dentro de un
+                rango determinado, mejor veamos un ejemplo:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-cut-1.png" alt="">
+            </div>
+            <p>
+                Vemos que en el ejemplo, tenemos <span>[2:8]</span>, eso indica el rango de impresión, siendo que
+                empezamos por el carácter en la posición 2 y terminando en el que <span>preceda</span> al carácter de
+                posición 8. Jugando con los valores del rango podemos hacer lo siguiente:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-cut-2.png" alt="">
+                <img src="/Imagenes/CursoPython/string-cut-3.png" alt="">
+            </div>
+            <p>
+                En la primera imagen donde tenemos el <span>[:5]</span>, lo que estamos indicando es que imprima el
+                string de manera normal hasta el carácter que <span>preceda</span> al que esté en la posición 5,
+                mientras que, en la segunda imagen tenemos <span>[3:]</span>, esto lo que indica es que empezaremos a
+                imprimir el string a partir del carácter que esté en la posición 3.
+            </p>
+            <p>
+                Finalmente tenemos este último caso donde usamos valores negativos en los rangos:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-cut-4.png" alt="">
+            </div>
+            <p>
+                Lo que sucede aquí es que vamos a la inversa siendo que contando de <span>derecha a izquierda</span>
+                mostramos el string a partir del carácter en la posición 1 hasta el carácter que preceda al que esté en
+                la posición 6, recuerda que los espacios cuentan como caracteres.
+            </p>
+            <h4>2. concatenando strings</h4>
+            <p>
+                Concatenar cadenas es algo bastante sencillo (╹ڡ╹), ya que solo ocupamos el operador de suma
+                <span>+</span>, se puede hacer de las siguientes maneras:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-suma-1.png" alt="">
+                <img src="/Imagenes/CursoPython/string-suma-2.png" alt="">
+            </div>
+            <p>
+                En la primera imagen notamos que al momento de concatenar <span>pega</span> literalmente un string con
+                otro sin dejar espacios, pero en la segunda imagen vemos como podemos agregar ese espacio faltante.
+            </p>
+            <h4>3. format()</h4>
+            <p>
+                Finalmente echemos un ojo de que trata <span>format</span>, es básicamente otra forma de combinar
+                strings, incluso creo yo es más cómodo que usando el operador <span>+</span>, para que veas por que digo
+                que es así veamos como se aplica (￣︶￣):
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-format-1.png" alt="">
+            </div>
+            <p>
+                Podemos notar que en la cadena de saludo hay unas llaves <span>{}</span>, con eso estamos indicando que
+                ahí habrá otra cadena que será agregada con format y simplemente al momento de usar format solo es como
+                se ve en la imagen, con la cadena que sustituye las llaves dentro de los paréntesis. Con format podemos
+                tomar un número ilimitado de argumentos:
+            </p>
+            <div class="image">
+                <!--por esta imagen es que se debe cambiar por cajas de codigo en la pagina-->
+                <img src="/Imagenes/CursoPython/string-format-2.png" alt="">
+            </div>
+            <p>
+                Y solo como dato curioso podemos asignar un prden por medio de números, pero esto ya no lo recomiendo
+                puesto que se puede tornar muy confuso y tardado, siendo algo ineficiente, pero cuanto menos es curioso:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-format-3.png" alt="">
+            </div>
+            <h4>4. caracteres de escape</h4>
+            <p>
+                Finalmente para cerrar este bloque veremos lo que son los caracteres de escape, antes mencione cosas
+                como si queríamos usar comillas dobles dentro de otras no debíamos hacerlo, que para eso debíamos
+                combinar simples con dobles, pues bueno en realidad sí que podemos poner comillas dobles dentro de otras
+                y eso es gracias al carácter de escape <span>\</span>, veamos cómo:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-escape-1.png" alt="">
+            </div>
+            <p>
+                Aunque claro, el carácter de escape se usa principalmente para otro tipo de "comandos" por decirlo de
+                una manera, por ejemplo podemos hacer saltos de línea con <span>\n</span>:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/string-escape-2.png" alt="">
+            </div>
+            <p>
+                Aquí tienes una tabla con los principales caracteres de escape que podemos encontrar en Python:
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>carácter de escape</th>
+                            <th>descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\'</td>
+                            <td>Inserta una comilla simple</td>
+                        </tr>
+                        <tr>
+                            <td>\\</td>
+                            <td>Inserta una barra invertida</td>
+                        </tr>
+                        <tr>
+                            <td>\n</td>
+                            <td>Salto de linea</td>
+                        </tr>
+                        <tr>
+                            <td>\r</td>
+                            <td>Retorno de carro</td>
+                        </tr>
+                        <tr>
+                            <td>\t</td>
+                            <td>Tabulador</td>
+                        </tr>
+                        <tr>
+                            <td>\b</td>
+                            <td>Quita un espacio</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    <!--seccion arrays python final-->
+
+    <!--seccion boton de retorno inicio-->
+
+    <section class="btn-retorno">
+        <a href="/PythonMain.html" class="btn">página principal del curso</a>
+    </section>
+
+    <!--seccion boton de retorno final-->
+
+    <!--seccion del footer inicio-->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3 class="logo icon"><img src="/Imagenes/header-icon.jpg" alt=""> IziCode </h3>
+                <p>Aprendamos juntos a programar de forma fácil e intuitiva! (＾▽＾)</p>
+            </div>
+
+            <div class="box">
+                <h3>Enlaces rápidos</h3>
+                <a href="/Inicio.html" class="link">Inicio</a>
+                <a href="/Cursos.html" class="link">Cursos</a>
+                <a href="/Acerca_de.html" class="link">Acerca de</a>
+            </div>
+
+        </div>
+
+        <div class="credit">
+            Creado por <span>Luis Emmanuel R.F.</span> | Todos los derechos reservados
+        </div>
+
+    </section>
+
+    <!--seccion del footer final-->
+
+    <!--link archivo JS swiper-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--link archivo JS-->
+    <script src="/JS/script.js"></script>
+</body>
+
+</html>

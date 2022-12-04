@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python|If</title>
+
+    <!--link a font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!--link archivo CSS-->
+    <link rel="stylesheet" href="/CSS/style.css">
+
+</head>
+
+<body>
+
+    <!--seccion del header inicio-->
+    <header class="header">
+
+        <a href="/Inicio.html" class="logo"><img src="/Imagenes/header-icon.jpg" alt=""> IziCode </a>
+
+        <nav class="navbar">
+            <div id="close-navbar" class="fas fa-times"></div>
+            <a href="/Inicio.html">Inicio</a>
+            <a href="/Cursos.html">Cursos</a>
+            <a href="/Acerca_de.html">Acerca de</a>
+        </nav>
+
+        <div class="icons">
+            <div id="account-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+    <!--seccion del header final-->
+
+    <!--seccion de cuenta form inicio-->
+
+    <section class="cuenta-form">
+
+        <div id="close-form" class="fas fa-times"></div>
+
+        <div class="buttons">
+            <span class="btn active ing-btn">Ingresar</span>
+            <span class="btn reg-btn">Registrar</span>
+        </div>
+
+        <form action="" class="ingresar-form active">
+            <h3>Inicia sesión</h3>
+            <input type="email" placeholder="Ingresar correo" class="box">
+            <input type="password" placeholder="Ingresar contraseña" class="box">
+            <div class="flex">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">Recuerdame</label>
+                <a href="#">Olvidaste tu contraseña?</a>
+            </div>
+            <input type="submit" value="Ingresar" class="btn">
+        </form>
+
+        <form action="" class="registrar-form">
+            <h3>Registrate ahora</h3>
+            <input type="text" placeholder="Nombre" class="box">
+            <input type="text" placeholder="Apellidos" class="box">
+            <input type="email" placeholder="Correo" class="box">
+            <input type="password" placeholder="Ingresa contraseña" class="box">
+            <input type="password" placeholder="Repite la contraseña" class="box">
+            <input type="submit" value="Registrar" class="btn">
+        </form>
+
+    </section>
+
+    <!--seccion de cuenta form final-->
+
+    <!--seccion del titular inicio-->
+
+    <h1 class="titular">bloque 6: sentencia condicional if</h1>
+
+    <!--seccion del titular final-->
+
+    <!--seccion estructura id python inicio-->
+
+    <section name="sentenciaIf-Py" class="main-info">
+
+        <div name="definicion" class="info-curso">
+            <h1 class="titular-sec">¿qué es un if?</h1>
+            <p>
+                En caso de que no sepas que es un <span>if</span>, pues es algo bastante sencillo pero muy muuuuy util
+                en el mundo de la programación, los if son usados para definir una sentencia, un especie de filtro por
+                asi decirlo donde <span>si se cumple</span> cierta condición se <span>realiza cierta acción</span>, en
+                los <span>if</span> haremos uso principalmente de los operadores <span>relacionales</span> y en
+                determinadas ocasiones de los lógicos ( •̀ ω •́ )✧.
+            </p>
+            <figure class="image">
+                <div class="icon">
+                    <img src="/Imagenes/pymu-icon-temp-2.png" alt="">
+                </div>
+            </figure>
+        </div>
+
+        <div name="uso-Py" class="info-curso">
+            <h1 class="titular-sec">¿cómo se usa en Python?</h1>
+            <p>
+                La estructura de un <span>if</span> es bastante simple, como mencione antes en la definición es un
+                condicional donde si se cumple se realiza cierta acción, pues entonces veamos un ejemplo simple de esto:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/if-uso-1.png" alt="">
+            </div>
+            <p>
+                Como se ve en el ejemplo tenemos dos variables con sus respectivos valores <span>X</span> y
+                <span>Y</span>, seguido se coloca el <span>if</span> y los paréntesis que contendrán la <span>condición
+                    a cumplir</span>, seguido se colocan dos puntos <span>:</span> esto para indicar que estamos
+                abriendo el if, en otros lenguajes se colocan <span>{}</span>, pero en Python no es el caso, si las
+                colocamos nos mandara un error, notemos que el condicional que se colocó es que <span>X debe ser mayor
+                    que Y</span>, como es el caso se ejecuta el contenido del if que en este caso es el
+                <span>print</span>, de no cumplirse la condición simplemente Python no haría nada (ㆆ_ㆆ).
+            </p>
+
+            <div name="if|else-Py" class="info-curso">
+                <h1 class="titular-sec">if y else</h1>
+            </div>
+            <p>
+                Puede que te preguntes <span>"Sí bueno tia Pymu entonces, ¿podemos hacer algo en caso de que no se
+                    cumpla la condición?"</span> y la respuesta es <span>si</span>, lo que podemos hacer es utilizar un
+                <span>else</span>, los else sirven para hacer una acción en caso de que <span>NO</span> se cumpla la
+                condición, veamos un ejemplo para que esto nos quede más claro:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/if-uso-2.png" alt="">
+            </div>
+            <p>
+                Podrás notar que ahora la condición es que <span>X sea menor que Y</span> lo cual no es cierto, por lo
+                que Python procede a pasar al <span>else</span> del cual ejecuta el <span>print</span> como se ve en el
+                ejemplo. <br><br> Algo importante MUY importante que debes tener en cuenta es que la identación (el
+                espacio que se coloca cuando estamos dentro de un condicional) es realmente clave, si está mal colocada
+                pueden cometerse múltiples errores, siempre ten cuidado al respecto, ya que en este caso si quitamos la
+                identación estamos indicando que estamos fuera del if, mejor veamos el siguiente ejemplo para que veas a
+                que me refiero:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/if-uso-3.png" alt="">
+                <img src="/Imagenes/CursoPython/if-uso-4.png" alt="">
+            </div>
+            <p>
+                ¿Ves que cuando quitamos la indentación se ocasionan errores? Por eso es que debemos tener siempre
+                cuidado al respecto X﹏X.
+            </p>
+            <div class="tip-box">
+                <div class="icon">
+                    <img src="/Imagenes/CursoPython/pymu-tip-icon.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>algo curioso...</h3>
+                    <p>
+                        En Python puedes prescindir de usar los <span>()</span> siendo que puedes escribir un if de la
+                        siguiente manera <span>if x < y:</span>. No lo recomiendo a menos que estés totalmente seguro o
+                                segura de que no entraras en confusión（￣︶￣）.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div name="muchosElseIf-Py" class="info-curso">
+            <h1 class="titular-sec">más if, más else y la pyramid doom</h1>
+            <p>
+                Algo que podemos hacer es una cadena de <span>else if</span>, cuando ocupamos más condiciones que
+                queremos colocar por medio de un if, para ello se hace uso de los <span>elif</span>, miremos un ejemplo
+                para que entiendas como funciona:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/elif-uso-1.png" alt="">
+            </div>
+            <p>
+                Como puedes notar en el ejemplo con <span>elif</span> se colocó otra condición que bien puede o no
+                cumplirse, en el caso del ejemplo puedes notar que no se cumple por lo que se pasa a el else que coloca
+                el ultimo <span>print</span>, esto es bastante útil en determinados casos PERO esto también puede ser
+                problemático (⊙_⊙;). En caso de que requieras hacer múltiples condiciones tendrías que escribir una
+                absurda cantidad de <span>elif</span>, lo cual no es precisamente eficiente o considerado como una buena
+                practica, lo que da origen a la temible <span>pyramid doom</span> o piramide de la fatalidad (⊙ｏ⊙), que
+                bueno, en realidad en Python más que una pirámide es una torre de elif, pero no te preocupes en bloques
+                futuros veremos otras estructuras que nos ayudarán a evitar esto (╹ڡ╹ ).
+            </p>
+            <div class="tip-box">
+                <div class="icon">
+                    <img src="/Imagenes/CursoPython/pymu-tip-icon.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>algo que debes saber...</h3>
+                    <p>
+                        No olvides que puedes comparar cadenas de texto, por ejemplo <span>if("perro" == "gato")</span>,
+                        o de la forma <span>texto1 = "hola"</span>, <span>texto2 = "hola"</span> y tener
+                        <span>if(texto1 == texto2)</span>, se alguien creativo o creativa, experimenta para descubrir
+                        más cosas UwU.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div name="ejercicios" class="info-curso">
+            <h1 class="titular-sec">ejercicios (◎ロ◎)</h1>
+            <p>
+                Tomando en cuenta todo lo que hemos visto empecemos a resolver algunos ejercicios sencillos para
+                reforzar un poco más los conocimientos obtenidos (╹ڡ╹ ).
+            </p>
+            <h4>ejercicio 1</h4>
+            <p>
+                Realiza un programa donde el usuario escriba su edad y se indique si es o no mayor de edad.
+            </p>
+            <h4>ejercicio 2</h4>
+            <p>
+                Escribir un programa que pida al usuario un número entero y muestre por pantalla si es par o impar.
+            </p>
+            <h4>ejercicio 3</h4>
+            <p>
+                Escribir un programa que pida al usuario dos números y muestre por pantalla su división. Si el divisor
+                es cero el programa debe mostrar un error.
+            </p>
+            <h4>ejercicio 4</h4>
+            <p>
+                Escribir un código que tenga una variable que almacene el texto <span>contraseña</span>, debes pedirle
+                al usuario que escriba dicha contraseña <span>SIN TOMAR EN CUENTA</span> las mayúsculas y minúsculas, y
+                verificar si la contraseña es correcta o errónea. <span>Tip: revisa la lección de strings.</span>
+            </p><br>
+            <p>
+                Mucho éxito con estos problemas, una vez logres realizarlos podrás pasar a los siguientes bloques
+                ✍️(◔◡◔).
+            </p>
+        </div>
+
+    </section>
+
+    <!--seccion estructura id python final-->
+
+    <!--seccion boton de retorno inicio-->
+
+    <section class="btn-retorno">
+        <a href="/PythonMain.html" class="btn">página principal del curso</a>
+    </section>
+
+    <!--seccion boton de retorno final-->
+
+    <!--seccion del footer inicio-->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3 class="logo icon"><img src="/Imagenes/header-icon.jpg" alt=""> IziCode </h3>
+                <p>Aprendamos juntos a programar de forma fácil e intuitiva! (＾▽＾)</p>
+            </div>
+
+            <div class="box">
+                <h3>Enlaces rápidos</h3>
+                <a href="/Inicio.html" class="link">Inicio</a>
+                <a href="/Cursos.html" class="link">Cursos</a>
+                <a href="/Acerca_de.html" class="link">Acerca de</a>
+            </div>
+
+        </div>
+
+        <div class="credit">
+            Creado por <span>Luis Emmanuel R.F.</span> | Todos los derechos reservados
+        </div>
+
+    </section>
+
+    <!--seccion del footer final-->
+
+    <!--link archivo JS swiper-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--link archivo JS-->
+    <script src="/JS/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1340 @@
+/*Importamos la fuente a utilizar*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500;600&display=swap");
+
+/*Estilos generales*/
+* {
+  font-family: "Roboto Mono", monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+img {
+  user-select: none;
+}
+
+/*Definiendo colores, sombra y borde*/
+$morado: #621a6b;
+$morado-lg: #c239d4;
+$morado-lg-2: #e2b3ee;
+$morado-lg-fond: rgba(243, 198, 243, 0.521);
+$rosa: #e181ee;
+$border: 0.1rem solid $morado;
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+/*Función para los grid de la pagina*/
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 2rem;
+}
+
+/*Función para los titulos de la pagina*/
+@mixin titleText($titleSize) {
+  font-size: $titleSize;
+  text-transform: uppercase;
+  color: black;
+}
+
+/*Función para los textos de la pagina*/
+@mixin graphText($graphSize) {
+  font-size: $graphSize;
+  line-height: 2;
+  color: black;
+}
+
+/*Propiedades para la barra de scroll*/
+html {
+  font-size: 85.5%;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 0.7rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $morado;
+    border-radius: 0.5rem;
+  }
+}
+
+/*Estilos generales para las clases titular*/
+.titular {
+  padding: 3rem 0;
+  text-align: center;
+  color: $morado;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+/*Estilos generales para las clases titular-sec*/
+.titular-sec {
+  @include titleText(2rem);
+  padding-top: 1rem;
+  border-bottom: $border;
+  text-align: center;
+  margin: 0 5rem;
+  margin-bottom: 1rem;
+}
+
+/*Propiedades generales para los elementos btn*/
+.btn {
+  background: $morado-lg;
+  padding: 1.2rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  border: $border;
+  color: black;
+  display: inline-block;
+
+  &:hover {
+    background: $morado;
+    color: white;
+  }
+}
+
+/*Propiedades generales para los btn de retorno*/
+.btn-retorno {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+/*-------------------------------------INICIO-HTML-------------------------------------*/
+/*Estilos del header*/
+.header {
+  position: sticky;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: $box-shadow;
+  width: 100%;
+  height: 7rem;
+  padding: 2rem 5%;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+
+  .logo {
+    @include titleText(1.3rem);
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 4.6rem;
+      border-radius: 50%;
+    }
+  }
+
+  .navbar {
+    position: relative;
+
+    #close-navbar {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 3rem;
+      cursor: pointer;
+      color: black;
+      display: none;
+
+      &:hover {
+        color: $morado;
+        transform: rotate(90deg) scale(1.1);
+      }
+    }
+
+    a {
+      margin-right: 2rem;
+      @include titleText(1.3rem);
+
+      &:hover {
+        color: $morado;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .icons div {
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: black;
+    margin-left: 1.2rem;
+
+    &:hover {
+      color: $morado;
+    }
+  }
+
+  #menu-btn {
+    display: none;
+  }
+}
+
+.cuenta-form {
+  border: $border;
+  position: fixed;
+  top: 0;
+  right: -105%;
+  width: 35rem;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: $morado-lg-2;
+  z-index: 1200; //Para que cubra el heading
+
+  &.active {
+    right: 0;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+  }
+
+  #close-form {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    cursor: pointer;
+    color: black;
+
+    &:hover {
+      color: $morado;
+      transform: rotate(90deg) scale(1.1);
+    }
+  }
+
+  form {
+    border: $border;
+    padding: 2rem;
+
+    h3 {
+      @include titleText(1.8rem);
+      text-transform: uppercase;
+      padding-bottom: 0.5rem;
+    }
+
+    .box {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 1rem 1.2rem;
+      box-shadow: $box-shadow;
+      border: $border;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      padding: 1rem 0;
+      width: 100%;
+      margin: 0.7rem 0;
+      gap: 0.5rem;
+
+      label {
+        color: black;
+        cursor: pointer;
+      }
+
+      a {
+        //para que se separen correctamente el label y a
+        margin-left: auto;
+        color: $morado;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .buttons .btn {
+    margin: 0 0.5rem;
+
+    &.active {
+      background: $morado;
+      color: white;
+    }
+  }
+
+  form {
+    border: $border;
+    padding: 2rem;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.banner {
+  padding: 0;
+
+  .banner-box {
+    display: flex;
+    align-items: flex-end;
+    height: 45rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(/Imagenes/Mascot-Banner-1.jpg) no-repeat;
+    background-size: cover !important;
+    background-position: center !important;
+
+    .content {
+      border-radius: 0 1rem 0 0;
+      background: rgba(0, 0, 0, 0.2);
+      width: 60rem;
+
+      h3 {
+        @include titleText(4rem);
+        color: white;
+        padding-bottom: 1rem;
+      }
+
+      p {
+        @include graphText(2rem);
+        color: white;
+        font-weight: bold;
+        padding: 1rem 0;
+      }
+    }
+  }
+}
+
+.cursos-inicio {
+  .box-container {
+    @include grid(30rem);
+    padding-bottom: 2rem;
+
+    .box {
+      padding: 1rem;
+
+      &:hover .image img {
+        transform: scale(1.1);
+      }
+
+      .image {
+        height: 32rem;
+        overflow: hidden;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        h3 {
+          @include titleText(1.5rem);
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+          padding: 0.5rem 1.5rem;
+          background: rgba(189, 110, 241, 0.7);
+          border-radius: 0.5rem;
+        }
+      }
+
+      .content {
+        padding: 2rem;
+        text-align: center;
+        border: $border;
+        background: rgba(191, 119, 240, 0.5);
+
+        h3 {
+          @include titleText(1.3rem);
+          text-transform: uppercase;
+        }
+
+        p {
+          @include graphText(1rem);
+          padding: 1rem 0;
+
+          span {
+            color: $morado;
+            font-weight: bold;
+            text-transform: capitalize;
+          }
+        }
+
+        .icons {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 2rem;
+          padding-top: 1rem;
+          border-top: $border;
+
+          span {
+            @include graphText(1.1rem);
+
+            i {
+              color: $morado;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*-------------------------------------CURSOS-HTML-------------------------------------*/
+.cursos {
+  .titular {
+    padding-bottom: 0.5rem;
+  }
+
+  .slide {
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    width: 32rem;
+
+    &:hover .image img {
+      transform: scale(1.1);
+    }
+
+    .image {
+      height: 32rem;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      h3 {
+        @include titleText(1.2rem);
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        padding: 0.5rem 1.5rem;
+        background: rgba(189, 110, 241, 0.7);
+        border-radius: 0.5rem;
+      }
+    }
+
+    .content {
+      position: relative;
+      padding: 2rem;
+      text-align: center;
+      border: $border;
+      background: rgba(191, 119, 240, 0.5);
+
+      p {
+        @include graphText(1rem);
+        padding: 1rem 0;
+
+        span {
+          color: $morado;
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: $border;
+
+        span {
+          @include graphText(1.1rem);
+
+          i {
+            color: $morado;
+          }
+        }
+      }
+    }
+  }
+}
+
+.proximamente-cur {
+  margin: 3rem;
+  padding: 2rem;
+  border: $border;
+  background: $rosa;
+}
+
+/*-------------------------------------ACERCA-DE-HTML-------------------------------------*/
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  background: $morado-lg-fond;
+  padding: 1rem;
+
+  .image {
+    flex: 1 1 40rem;
+
+    img {
+      width: 100%;
+      border-radius: 2rem;
+    }
+  }
+
+  .content {
+    flex: 1 1 40rem;
+
+    h1 {
+      @include titleText(2rem);
+      line-height: 3rem;
+      text-align: center;
+      border-bottom: $border;
+      margin: 1rem 0;
+    }
+
+    p {
+      @include graphText(1.1rem);
+      margin-bottom: 1.3rem;
+    }
+
+    .icons-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1rem 0;
+
+      .icons {
+        flex: 1 1 16rem;
+        text-align: center;
+        padding: 0.5rem 1rem;
+
+        &:hover {
+          transform: scale(1.1);
+          background: $morado-lg-2;
+          border-radius: 5rem;
+        }
+
+        img {
+          width: 7rem;
+          margin-bottom: 0.5rem;
+        }
+
+        h3 {
+          text-transform: capitalize;
+          color: $morado;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+/*-----------------------------------INFORMACION MASCOTAS-----------------------------------*/
+.mascotas {
+  .box-container {
+    @include grid(30rem);
+    padding: 2rem;
+
+    .box {
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+
+        .content {
+          background: $morado-lg-fond;
+          border-radius: 0 0 1rem 1rem;
+
+          h1 {
+            border-bottom: $border;
+            margin: 0 2.5rem;
+          }
+        }
+      }
+
+      figure {
+        height: 40rem;
+        position: relative;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .content {
+        h1 {
+          @include titleText(1.5rem);
+          text-align: center;
+          padding-top: 1rem;
+
+          span {
+            color: $morado;
+            font-weight: bold;
+          }
+        }
+
+        p {
+          @include graphText(1.1rem);
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------------------PROFESORES---------------------------------------------*/
+.profesores {
+  padding-bottom: 2rem;
+
+  .slide {
+    text-align: center;
+    width: 30rem;
+
+    &:hover {
+      .imagen {
+        img {
+          background: $rosa;
+        }
+
+        .content {
+          bottom: 0;
+        }
+      }
+    }
+
+    .imagen {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        background: $morado-lg-fond;
+      }
+
+      .content {
+        background: $morado-lg-2;
+        position: absolute;
+        bottom: -10rem;
+        left: 0;
+        right: 0;
+        padding: 2.5rem;
+
+        h3 {
+          @include titleText(1.1rem);
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+        }
+
+        span {
+          color: $morado;
+          text-transform: uppercase;
+          font-weight: bolder;
+        }
+
+        p {
+          @include graphText(1rem);
+          line-height: 1.5rem;
+        }
+      }
+    }
+
+    .sub-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0.5rem;
+      padding-top: 0.5rem;
+
+      h3 {
+        @include titleText(1.2rem);
+      }
+
+      a {
+        @include graphText(1.2rem);
+        text-transform: uppercase;
+        color: $morado;
+        font-weight: bolder;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/*-------------------------------------PYTHON-MAIN-CURSOS--------------------------------*/
+.pythonMain {
+  padding-bottom: 2rem;
+
+  h1 {
+    span {
+      color: $morado-lg;
+    }
+  }
+
+  .box-container {
+    @include grid(30rem);
+
+    .box {
+      &:hover .figure img {
+        transform: scale(1.1);
+      }
+
+      &.hide {
+        display: none;
+      }
+
+      .figure {
+        overflow: hidden;
+        height: 20rem;
+        position: relative;
+        border-radius: 1rem 1rem 0 0;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .content {
+        background: $morado-lg-fond;
+        border-radius: 0 0 1rem 1rem;
+        padding-bottom: 1rem;
+        text-align: center;
+        border: $border;
+
+        h3 {
+          @include titleText(1.3rem);
+          padding: 0.5rem;
+          margin: 0 2rem;
+          border-bottom: $border;
+          margin-bottom: 1rem;
+          padding-top: 1rem;
+        }
+      }
+    }
+  }
+
+  .load-more {
+    padding-top: 2rem;
+    text-align: center;
+
+    .btn {
+      width: 25rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/*--------------------------------------ABOUT-PYTHON-------------------------------------------*/
+.about-python {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  background: $morado-lg-fond;
+  padding: 1rem;
+
+  .image {
+    flex: 1 1 40rem;
+
+    img {
+      width: 100%;
+      border-radius: 2rem;
+    }
+  }
+
+  .content {
+    flex: 1 1 40rem;
+
+    p {
+      @include graphText(1.1rem);
+      margin-bottom: 1.3rem;
+    }
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 1rem;
+
+      img {
+        width: 20%;
+      }
+    }
+  }
+}
+
+/*---------------------------------------PYTHON-USES------------------------------------------*/
+.python-uses {
+  background: $morado-lg-fond;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+
+  .content {
+    margin: 0 3rem;
+    p {
+      @include graphText(1.1rem);
+    }
+
+    ul {
+      @include graphText(1.1rem);
+      padding-left: 3rem;
+      list-style-type: none;
+
+      li:before {
+        content: "";
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        background-size: 10px;
+        background-image: url("/Imagenes/python-icon-2.png");
+        background-repeat: no-repeat;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+/*---------------------------------------PYTHON-ADVANTAGES------------------------------------------*/
+.python-advan {
+  background: $morado-lg-fond;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+
+  .content {
+    margin: 0 3rem;
+
+    ul {
+      @include graphText(1.1rem);
+      padding-left: 3rem;
+      list-style-type: none;
+
+      li:before {
+        content: "";
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        background-size: 10px;
+        background-image: url("/Imagenes/python-icon-2.png");
+        background-repeat: no-repeat;
+        margin-right: 5px;
+      }
+    }
+
+    p {
+      @include graphText(1.1rem);
+      padding: 1rem 0;
+
+      span {
+        color: $morado;
+        font-weight: bolder;
+      }
+    }
+
+    .image {
+      display: flex;
+      justify-content: center;
+
+      .icon {
+        width: 15rem;
+        height: 15rem;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+/*-------------------------------------PYTHON-INSTALL-------------------------------------*/
+.python-install {
+  background: $morado-lg-fond;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+
+  .content {
+    margin: 0 3rem;
+
+    p {
+      @include graphText(1.1rem);
+      padding-bottom: 0.5rem;
+
+      span {
+        color: $morado;
+        font-weight: bolder;
+      }
+
+      a {
+        color: $morado;
+        font-weight: bolder;
+        text-decoration: underline;
+        text-transform: uppercase;
+      }
+    }
+
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      font-weight: bolder;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .icons-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding-bottom: 1rem;
+
+      .icon {
+        margin: 0 2rem;
+        width: 15rem;
+        height: 15rem;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 100%;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    figure {
+      display: flex;
+      justify-content: center;
+
+      a {
+        width: 15rem;
+        height: 15rem;
+        margin-bottom: 1rem;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*-------------------------------------ESTILOS PARA LOS BLOQUES DE PYTHON-----------------------------------*/
+.main-info {
+  background: $morado-lg-fond;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+
+  .info-curso {
+    margin: 0 3rem;
+
+    h4 {
+      @include titleText(1.2rem);
+      color: $morado;
+      font-weight: bolder;
+      margin-top: 0.5rem;
+    }
+
+    p {
+      @include graphText(1.1rem);
+      padding-bottom: 0.5rem;
+
+      span {
+        color: $morado;
+        font-weight: bolder;
+      }
+    }
+
+    .image {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 1rem 0;
+
+      .icon {
+        width: 15rem;
+        height: 15rem;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      img {
+        margin: 0 1rem;
+        padding: 0.5rem 0;
+      }
+    }
+
+    .tip-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      &:hover {
+        .icon {
+          background: $rosa;
+
+          img {
+            transform: scale(1.1);
+          }
+        }
+
+        .content {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+
+      .icon {
+        height: 20rem;
+        width: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $morado-lg-2;
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        img {
+          width: 90%;
+        }
+      }
+
+      .content {
+        border: $border;
+        background: $morado-lg-2;
+        width: 40rem;
+        height: auto;
+        margin: 0 1rem;
+        border-radius: 1rem;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+
+        h3 {
+          @include titleText(1.1rem);
+          text-align: center;
+        }
+
+        p {
+          @include graphText(1rem);
+          margin: 0.2rem;
+        }
+      }
+    }
+
+    ul {
+      @include graphText(1.1rem);
+      padding-left: 3rem;
+      list-style-type: none;
+      margin: 0.5rem 0;
+
+      li:before {
+        content: "";
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        background-size: 10px;
+        background-image: url("/Imagenes/python-icon-2.png");
+        background-repeat: no-repeat;
+        margin-right: 5px;
+      }
+    }
+
+    .table-container {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+      font-size: 1.2rem;
+
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        th {
+          background: $morado-lg-2;
+          text-transform: uppercase;
+          padding: 0.5rem;
+          border: solid 1px $morado-lg-2;
+        }
+
+        td {
+          text-align: center;
+          padding: 0.5rem;
+          border: solid 1px $morado-lg-2;
+          border-top: none;
+
+          span {
+            color: $morado;
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+
+    .formula {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+
+      .lado-iz {
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+
+      .parentesis {
+        font-size: 2rem;
+        padding: 0 0.3rem;
+      }
+
+      .cuerpo {
+        .superior {
+          font-size: 1.1rem;
+          border-bottom: $border;
+        }
+
+        .inferior {
+          font-size: 1.1rem;
+          text-align: center;
+        }
+      }
+
+      .exponente {
+        position: relative;
+        top: -10px;
+        left: -2px;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+/*-------------------------------------CONSTRUCCION-------------------------------------*/
+.construc {
+  background: url(/Imagenes/back-construc-temp.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  h1 {
+    padding: 25rem 0;
+    color: black;
+    background: rgba(189, 110, 241, 0.4);
+  }
+}
+
+/*-------------------------------------FOOTER-------------------------------------------*/
+.footer {
+  background: $morado-lg-2;
+
+  .box-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+
+    .box {
+      .icon {
+        display: flex;
+        align-items: center;
+      }
+
+      h3 {
+        @include titleText(1.5rem);
+        padding: 1rem 0;
+      }
+
+      img {
+        width: 4rem;
+        border-radius: 50%;
+      }
+
+      p {
+        @include graphText(1.2rem);
+        padding: 0.5rem 0;
+      }
+
+      a {
+        @include graphText(1.2rem);
+        padding: 0.5rem 0;
+        display: block;
+        color: $morado;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .credit {
+    padding: 2rem 0;
+    margin: 0 3rem;
+    text-align: center;
+    border-top: $border;
+    font-size: 1.2rem;
+
+    span {
+      color: $morado;
+      font-weight: bolder;
+    }
+  }
+}
+
+/*-------------------------------------MEDIA QUERIES------------------------------------*/
+@media (max-width: 1200px) {
+  .header {
+    padding: 2rem 7%;
+  }
+
+  section {
+    padding: 3rem 5%;
+  }
+
+  .footer {
+    .box {
+      padding: 1rem;
+    }
+  }
+
+  .banner .banner-box .content {
+    border-radius: 1rem;
+    width: 50rem;
+
+    h3 {
+      font-size: 2.7rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .construc {
+    h1 {
+      border-radius: 3rem;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 75%;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  section {
+    padding: 3rem 2rem;
+  }
+
+  .footer .box-container {
+    font-size: 50%;
+
+    .box {
+      padding: 1.5rem;
+    }
+  }
+
+  .banner .banner-box .content {
+    h3 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .mascotas .box .content {
+    background: $morado-lg-fond;
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    #menu-btn {
+      display: inline-block;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      right: -105%;
+      width: 30rem;
+      background: $morado-lg-2;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      z-index: 1200;
+
+      #close-navbar {
+        display: block;
+      }
+
+      &.active {
+        right: 0;
+        box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+      }
+
+      a {
+        display: block;
+        margin: 2rem 0;
+        text-align: center;
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  .banner .banner-box .content {
+    width: 35rem;
+  }
+
+  .table-container table {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 70%;
+  }
+}

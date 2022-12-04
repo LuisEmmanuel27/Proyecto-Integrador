@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python|LeerDatos</title>
+
+    <!--link a font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!--link archivo CSS-->
+    <link rel="stylesheet" href="/CSS/style.css">
+
+</head>
+
+<body>
+
+    <!--seccion del header inicio-->
+    <header class="header">
+
+        <a href="/Inicio.html" class="logo"><img src="/Imagenes/header-icon.jpg" alt=""> IziCode </a>
+
+        <nav class="navbar">
+            <div id="close-navbar" class="fas fa-times"></div>
+            <a href="/Inicio.html">Inicio</a>
+            <a href="/Cursos.html">Cursos</a>
+            <a href="/Acerca_de.html">Acerca de</a>
+        </nav>
+
+        <div class="icons">
+            <div id="account-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+    </header>
+    <!--seccion del header final-->
+
+    <!--seccion de cuenta form inicio-->
+
+    <section class="cuenta-form">
+
+        <div id="close-form" class="fas fa-times"></div>
+
+        <div class="buttons">
+            <span class="btn active ing-btn">Ingresar</span>
+            <span class="btn reg-btn">Registrar</span>
+        </div>
+
+        <form action="" class="ingresar-form active">
+            <h3>Inicia sesión</h3>
+            <input type="email" placeholder="Ingresar correo" class="box">
+            <input type="password" placeholder="Ingresar contraseña" class="box">
+            <div class="flex">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">Recuerdame</label>
+                <a href="#">Olvidaste tu contraseña?</a>
+            </div>
+            <input type="submit" value="Ingresar" class="btn">
+        </form>
+
+        <form action="" class="registrar-form">
+            <h3>Registrate ahora</h3>
+            <input type="text" placeholder="Nombre" class="box">
+            <input type="text" placeholder="Apellidos" class="box">
+            <input type="email" placeholder="Correo" class="box">
+            <input type="password" placeholder="Ingresa contraseña" class="box">
+            <input type="password" placeholder="Repite la contraseña" class="box">
+            <input type="submit" value="Registrar" class="btn">
+        </form>
+
+    </section>
+
+    <!--seccion de cuenta form final-->
+
+    <!--seccion del titular inicio-->
+
+    <h1 class="titular">bloque 5: leer datos por teclado</h1>
+
+    <!--seccion del titular final-->
+
+    <!--seccion leer datos Python inicio-->
+
+    <section name="leerDatos-Py" class="main-info">
+
+        <div name="definicion" class="info-curso">
+            <h1 class="titular-sec">¿leer datos por teclado?</h1>
+            <p>
+                Este bloque será corto pero es bastante importante que veamos como podemos leer datos por teclado en
+                Python, pero puede que no sepas a qué me refiero con esto ㄟ( ▔, ▔ )ㄏ, en caso de ser así pues veamos,
+                cuando hablamos de <span>leer datos por teclado</span> nos referimos a que el usuario podrá escribir
+                algún valor que le solicitemos y Python pueda trabajar con ese valor, a lo largo de este bloque veremos
+                cómo hacerlo y la gran importancia que tiene el saberlo.
+            </p>
+            <figure class="image">
+                <div class="icon">
+                    <img src="/Imagenes/pymu-icon-temp-2.png" alt="">
+                </div>
+            </figure>
+        </div>
+
+        <div name="Py-input" class="info-curso">
+            <h1 class="titular-sec">función input()</h1>
+            <p>
+                Con la función <span>input()</span> seremos capaces de obtener texto o números escritos por teclado,
+                cuando Python se tope con esta función detendrá temporalmente su ejecución hasta que escribamos algo y
+                pulsemos la tecla <span>enter</span> como podemos ver en el siguiente ejemplo:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/leer-input-1.png" alt="">
+            </div>
+            <p>
+                Viendo la imagen podemos ver que para usar input debemos asignarle una variable para que dicho valor sea
+                almacenado, así también vemos otra forma de mostrar la variable con el print, siendo parecido a format,
+                nótese la letra <span>f</span> colocada fuera de los paréntesis, esto indica que lo que va dentro de las
+                llaves <span>{}</span> va a ser una variable.<br><br>En caso de que queramos que el valor ingresado se
+                vea justo después de nuestra pregunta podemos usar <span>end</span>, veamos cómo funciona:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/leer-input-2.png" alt="">
+            </div>
+            <p>
+                Vemos que a end debemos agregar algo, en este caso solo nos interesa poner un espacio para que la
+                variable que se escriba por teclado no aparezca pegada a la pregunta.<br><br>Ahora veamos mi manera
+                favorita de usar input, que viene siendo una forma un poco más reducida:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/leer-input-3.png" alt="">
+            </div>
+            <p>
+                Como notarás podemos colocar la pregunta dentro de los <span>()</span> de input ahorrandonos una línea
+                de código ( •̀ ω •́ )✧.
+            </p>
+        </div>
+
+        <div name="py-convtipos" class="info-curso">
+            <h1 class="titular-sec">conversión de tipos</h1>
+            <p>
+                Algo muy importante que debemos tomar en cuenta es que si lo que queremos es almacenar números debemos
+                tener algo en consideración, si los almacenamos como vimos en el ejemplo anterior tenemos el problema de
+                que Python los tomara como caracteres:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/leer-camb-1.png" alt="">
+            </div>
+            <p>
+                ¿Lo notaste? o_o, como toma los números como una cadena lo único que hizo fue repetirla de nuevo por el
+                uso del operador <span>*</span>, en vez de realizar la multiplicación como podríamos esperar, bueno para
+                evitar esta situación y otros tipos de errores debemos especificar que tipo de variable almacenará input
+                de la siguiente manera:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/leer-camb-2.png" alt="">
+            </div>
+            <p>
+                Como se ve en el ejemplo solo ocupamos colocar el tipo de variable que deseamos que se use, en este caso
+                <span>int</span> y se colocan unos <span>()</span> en los cuales irá dentro el input como lo hemos
+                trabajado en los últimos ejemplos, claro que en vez de int puedes colocar <span>float</span> si así lo
+                deseas para hacer uso de números con decimal, eso sí, en caso de que el usuario trate de ingresar
+                caracteres en vez de números se producirá un error OwO.
+            </p>
+            <div class="tip-box">
+                <div class="icon">
+                    <img src="/Imagenes/CursoPython/pymu-tip-icon.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>algo que debes saber...</h3>
+                    <p>
+                        Otra forma que tenemos para mostrar variables en el print con texto adicional es con un poco de
+                        lógica:<br> <span>print("hola soy",nombre, "¿cómo estás?")</span><br>como puedes notar solo hace
+                        falta cerrar los paréntesis colocar entre comas la variable y podemos colocar aún más texto,
+                        esta es la forma a mi parecer más cómoda de mostrar variables en un print con texto adicional
+                        (￣︶￣).
+                    </p>
+                </div>
+            </div>
+            <p>
+                Por si te lo preguntabas, podemos realizar operaciones dentro del <span>print</span>:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/leer-camb-3.png" alt="">
+            </div>
+            <p>
+                Una última cosa que me gustaría enseñarte es que podemos colocar dentro de la pregunta del input una
+                variable:
+            </p>
+            <div class="image">
+                <img src="/Imagenes/CursoPython/leer-camb-4.png" alt="">
+            </div>
+        </div>
+
+        <div name="ejercicios" class="info-curso">
+            <h1 class="titular-sec">ejercicios (◎ロ◎)</h1>
+            <p>
+                Tomando en cuenta todo lo que hemos visto empecemos a resolver algunos ejercicios sencillos para
+                reforzar un poco más los conocimientos obtenidos (╹ڡ╹ ).
+            </p>
+            <h4>ejercicio 1</h4>
+            <p>
+                Realiza un programa que sea capaz de resolver la siguiente operación:
+            </p>
+            <div class="formula">
+                <div class="parentesis">(</div>
+                <div class="cuerpo">
+                    <div class="superior">3+2</div>
+                    <div class="inferior">2*5</div>
+                </div>
+                <div class="parentesis">)</div>
+                <div class="exponente">2</div>
+            </div>
+            <h4>ejercicio 2</h4>
+            <p>
+                Escribe un programa en el cual solicites el nombre del usuario y deberas mostrarlo 3 veces, una con
+                todas las letras en mayúsculas, otra con todas en minúsculas y finalmente otra donde la primera letra de
+                los nombres y apellidos empiecen con mayúscula.
+            </p>
+            <h4>ejercicio 3</h4>
+            <p>
+                Escribe un programa donde preguntes datos de un producto, deberás pedir un nombre, precio y cantidad de
+                unidades, finalmente deberás imprimir todos esos datos.
+            </p>
+            <h4>ejercicio 4</h4>
+            <p>
+                Deberás realizar un programa que reciba un número <span>entero "n"</span> con el cual se deberá resolver
+                la siguiente fórmula:
+            </p>
+            <div class="formula">
+                <div class="lado-iz">suma =</div>
+                <div class="cuerpo">
+                    <div class="superior">n(n+1)</div>
+                    <div class="inferior">2</div>
+                </div>
+            </div>
+            <p>
+                Mucho éxito con estos problemas, una vez logres realizarlos podrás pasar a los siguientes bloques, que
+                la cosa empieza a ponerse interesante ✍️(◔◡◔).
+            </p>
+        </div>
+
+    </section>
+
+    <!--seccion leer datos Python final-->
+
+    <!--seccion boton de retorno inicio-->
+
+    <section class="btn-retorno">
+        <a href="/PythonMain.html" class="btn">página principal del curso</a>
+    </section>
+
+    <!--seccion boton de retorno final-->
+
+    <!--seccion del footer inicio-->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3 class="logo icon"><img src="/Imagenes/header-icon.jpg" alt=""> IziCode </h3>
+                <p>Aprendamos juntos a programar de forma fácil e intuitiva! (＾▽＾)</p>
+            </div>
+
+            <div class="box">
+                <h3>Enlaces rápidos</h3>
+                <a href="/Inicio.html" class="link">Inicio</a>
+                <a href="/Cursos.html" class="link">Cursos</a>
+                <a href="/Acerca_de.html" class="link">Acerca de</a>
+            </div>
+
+        </div>
+
+        <div class="credit">
+            Creado por <span>Luis Emmanuel R.F.</span> | Todos los derechos reservados
+        </div>
+
+    </section>
+
+    <!--seccion del footer final-->
+
+    <!--link archivo JS swiper-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--link archivo JS-->
+    <script src="/JS/script.js"></script>
+</body>
+
+</html>
